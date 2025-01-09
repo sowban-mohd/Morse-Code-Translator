@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Morse Code Translator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1 onclick="location.reload()">Morse Code Translator</h1>
+        <div class="hamburger-menu" id="hamburgerMenu">
+            &#9776;
+            <nav id="navMenu" class="nav-menu">
+                <ul>
+                    <li><a href="https://en.wikipedia.org/wiki/Morse_code" target="_blank">What is Morse Code?</a></li>
+                    <li class="nav-dropdown">
+                        <span>Change Theme</span>
+                        <ul class="nav-dropdown-content">
+                            <li><a href="#" onclick="changeTheme('light')">Light Mode</a></li>
+                            <li><a href="#" onclick="changeTheme('dark')">Dark Mode</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#" onclick="exitSite()">Exit</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <div class="container">
+        <div class="conversion-dropdown">
+            <label for="conversionType">Conversion Type: </label>
+            <select id="conversionType" onchange="updatePlaceholders()">
+                <option value="textToMorse">Text to Morse Code</option>
+                <option value="morseToText">Morse Code to Text</option>
+            </select>
+        </div>
+        <textarea id="inputText" placeholder="Type the text message..."></textarea>
+        <div class="buttons">
+            <button onclick="convert()">Convert</button>
+        </div>
+        <div class="output-container">
+            <textarea id="outputText" placeholder="Result..." readonly></textarea>
+            <button id="copyButton" onclick="copyToClipboard()">Copy</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
